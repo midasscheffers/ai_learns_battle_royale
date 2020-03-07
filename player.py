@@ -72,11 +72,11 @@ class Player:
         elif net_out[1] == 1:
             self.rot -= net_out[0] * self.rot_speed * delta_time
         elif net_out[1] == 2:
-            self.speed = 100
+            self.speed = 0
         elif net_out[1] == 3:
             self.speed = -100
         else:
-            self.speed = 0
+            self.speed = 100
         self.sprite.rotation = -self.rot
         self.accel[0] = mth.cos(mth.radians(self.rot))
         self.accel[1] = mth.sin(mth.radians(self.rot))
